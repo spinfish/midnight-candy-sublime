@@ -1,0 +1,309 @@
+{
+    "author": "spinfish",
+    "name": "Midnight Candy",
+    "variables": {
+        "pale_pink": "#FFA7D3",
+        "keyword_pink": "#FF75BC",
+        "medium_light_pink_red": "#F56174",
+        "medium_light_yellow": "#F5C056",
+        "string_mint_green": "#7EF2AE",
+        "soft_salmony_red": "#E86E48",
+        "very_soft_violet": "#CAAFED",
+        "very_light_pinkish_red": "#FF9473",
+        "dark_greyish_parameter_blue": "#929396",
+        "medium_light_cyan_escape_blue": "#8CA6BD",
+        "magenta_pink_css_elem_selector": "#D12491"
+    },
+    "globals": {
+        "background": "#1C1C1C", // Background
+        "foreground": "#DDD7CA", // Text and indent lines
+        "caret": "#FF1493", // Cursor onscreen that flashes
+        "misspelling": "#FF1462", // Squiggly lines under misspelled words
+        "find_highlight": "darkturquoise",
+
+        // Displayed in gutter for added and modified lines
+        "line_diff_width": "4", // thicc
+        "line_diff_added": "olivedrab",
+        "line_diff_deleted": "orangered",
+        "line_diff_modified": "orange",
+
+        // Line count number in gutter
+        "gutter_foreground": "lightpink",
+
+        // Text selection background, text colour, whitespace
+        "selection": "#403f3f",
+        "selection_foreground": "darkseagreen",
+        "invisibles": "#000000",
+    },
+    "rules": [
+        {
+            // Regular comments, inline or block
+            "name": "Comments",
+            "scope": "comment.line, comment.block",
+            "foreground": "#717171",
+            "font_style": "italic"
+        },
+        {
+            // Comments for documentation, e.g. Python docstrings, JSDoc
+            "name": "Documentation Comments",
+            "scope": "comment.block.documentation",
+            "foreground": "#56B07B"
+        },
+        {
+            // Built in functions or methods e.g. require, __new__, isinstance
+            "name": "Built-in Function",
+            "scope": "support.function",
+            "foreground": "#6CA2B5"
+        },
+        {
+            // Arguments (NOT kwargs) passed to function/method e.g. print(<arg1>)
+            "name": "Function Call Arguments",
+            "scope": "meta.function-call.arguments",
+            "foreground": "#8AA0B4"
+        },
+        {
+            // Parameters e.g. def func(<arg>): ... # BBBBBB
+            "name": "Function parameters",
+            "scope": "variable.parameter",
+            "foreground": "var(dark_greyish_parameter_blue)"
+        },
+        {
+            // Functions whilst being invoked e.g. ''.<format>()
+            "name": "Function being invoked",
+            "scope": "variable.function",
+            "foreground": "#7BDBDB"
+        },
+        {
+            // Function name definition
+            "name": "Function Name Definition",
+            "scope": "entity.name.function",
+            "foreground": "#7DBBD1"
+        },
+        {
+            // Class name definition
+            "name": "Class Name Definition",
+            "scope": "entity.name.class",
+            "foreground": "var(soft_salmony_red)"
+        },
+        {
+            // Inherited class within class definition e.g. class MyClass(<Base>)
+            "name": "Inherited Class",
+            "scope": "entity.other.inherited-class",
+            "foreground": "var(pale_pink)"
+        },        
+        {
+            // Normal string
+            "name": "String",
+            "scope": "string",
+            "foreground": "var(string_mint_green)"
+        },
+        {
+            // Regexes e.g. /<@!?(\d+)>/
+            "name": "String Regular Expression",
+            "scope": "string.regexp",
+            "foreground": "#7DBBD1"
+        },
+        {
+            // Integers and built-in constants e.g. False, null, NotImplemented
+            "name": "Numbers and built-in constants",
+            "scope": "constant.numeric, constant.language",
+            "foreground": "var(very_light_pinkish_red)"
+        },
+        {
+            // Character escapes e.g. \n, x20, hex codes in CSS
+            "name": "Character Escapes",
+            "scope": "constant.character.escape, constant.other",
+            "foreground": "var(medium_light_cyan_escape_blue)"
+        },
+        {
+            // Control keywords e.g. return, for, in, try, if, await, del, !important, !DOCTYPE
+            "name": "Generic Keywords",
+            "scope": "keyword.control, keyword.other, keyword.declaration",
+            "foreground": "var(keyword_pink)"
+        },
+        {
+            // Keyword operators e.g. =, +, !!, &&, ||, and, or
+            "name": "Keyword Operators",
+            "scope": "keyword.operator",
+            "foreground": "#FFCC66"
+        },
+        {
+            // Keywords that affect the storage of a variable, e.g. get, class, const, extends, static
+            "name": "Variable Storage",
+            "scope": "storage.type, storage.modifier",
+            "foreground": "var(very_light_pinkish_red)"
+        },
+        {
+            // Reserved variable names specified by the language, e.g. this, self, cls
+            "name": "Reserved language variables",
+            "scope": "variable.language",
+            "foreground": "var(pale_pink)"
+        },
+        {
+            // Ugly highlight caused by bad syntax usually
+            "name": "Invalid Illegal",
+            "scope": "invalid.illegal",
+            "foreground": "#FF4551"
+        },
+        {
+            "name": "Invalid Deprecated",
+            "scope": "invalid.deprecated",
+            "foreground": "#FF4551CC"
+        },
+        {
+            // CSS: Property names e.g. .example { <background>: none; }
+            "name": "CSS Property Name",
+            "scope": "support.type.property-name.css",
+            "foreground": "darkseagreen"
+        },
+        {
+            // CSS: Pseudo-classes and pseudo-elements e.g. :<root>, :<hover>, :<not>, ::<after>, >
+            "name": "CSS Psuedo-Class",
+            "scope": "entity.other.pseudo-class.css, entity.other.pseudo-element.css",
+            "foreground": "#A87BDB"
+        },
+        {
+            // CSS: Element/ID selector e.g. <div>, <textarea>, <svg>, #<id-results>
+            "name": "CSS Elements and ID Selector",
+            "scope": "entity.name.tag.css, entity.other.attribute-name.id.css",
+            "foreground": "var(magenta_pink_css_elem_selector)"
+        },
+        {
+            // CSS: Class selectors e.g. <.>className, <:>hover, <::>after, <#>id-results
+            "name": "CSS Class Selectors",
+            "scope": "punctuation.definition.entity.css",
+            "foreground": "#ABE0DB"
+        },
+        {
+            // CSS: Attribute names e.g. [<style>]
+            // CSS: Class names e.g. .<selected-1Tbx07>
+            "name": "CSS Class Names",
+            "scope": "entity.other.attribute-name.css, entity.other.attribute-name.class.css",
+            "foreground": "var(soft_salmony_red)"
+        },
+        {
+            // JS: Built in classes e.g. Array, RegExp, Object
+            // JS: Built in objects that (for the most part) cannot be constructed e.g. Math, JSON, Reflect
+            // Python: Built in types e.g. tuple, list, TypeError
+            "name": "Support Built-in Classes and Types",
+            "scope": "support.class, support.constant.builtin, support.type",
+            "foreground": "#FFCC66"
+        },
+        {
+            // JS: object destructuring identifier, e.g. const { <original>: alias } = require('...')
+            "name": "JS Object Destructuring Identifier",
+            "scope": "meta.binding.destructuring.mapping.js",
+            "foreground": "var(medium_light_yellow)"
+        },
+        {
+            // JS: Attribute colour, e.g. res.<props>.<children>, require('fs').<promises>
+            "name": "JS Property Object",
+            "scope": "meta.property.object.js",
+            "foreground": "#FA7DBB"
+        },
+        {
+            // JS: Variable name binding e.g. const <entity> = null; let <value> = 2
+            "name": "JS Variable Name Binding",
+            "scope": "meta.binding.name.js",
+            "foreground": "var(pale_pink)"
+        },
+        {
+            // Python: decorators excluding @ symbol e.g. @functools.<cached_property>
+            // Python: constants e.g. <CONSTANT_NAME> = value
+            "name": "Python Decorators and Constants",
+            "scope": "variable.annotation.python, variable.annotation.function.python, variable.other.constant.python",
+            "foreground": "var(medium_light_pink_red)"
+        },
+        {
+            // HTML, XML: Tag names e.g. <body><p>Bruh</p></<body>>F56174
+            "name": "HTML/XML Tag Names",
+            "scope": "entity.name.tag",
+            "foreground": "var(medium_light_pink_red)"
+        },
+        {
+            // HTML, XML: Tag attribute names e.g. <button <class>='bruh-button'></button>
+            "name": "HTML/XML Tag Names",
+            "scope": "entity.other.attribute-name.html, entity.other.attribute-name.xml",
+            "foreground": "var(medium_light_yellow)"
+        },
+        {
+            // Markup: italic text e.g. <*This is italic text*>
+            "name": "Markup Italic",
+            "scope": "markup.italic",
+            "foreground": "var(keyword_pink)",
+            "font_style": "italic"
+        },
+        {
+            // Markup: bold text e.g. <**This is bold text**>
+            "name": "Markup Bold",
+            "scope": "markup.bold",
+            "foreground": "var(soft_salmony_red)",
+            "font_style": "bold"
+        },
+        {
+            // Markup: raw inline text e.g. <`This is raw inline text`>
+            // Markup: raw block text, cannot provide examples sorry :c
+            "name": "Markup Raw Inline and Block",
+            "scope": "markup.raw.inline, markup.raw.block",
+            "foreground": "var(string_mint_green)"
+        },
+        {
+            // Markup: codeblock text e.g. ``` ${'\n'} <This is a codeblock> ```
+            "name": "Markup Codeblock Content",
+            "scope": "markup.raw.code-fence",
+            "foreground": "var(dark_greyish_parameter_blue)"
+        },
+        {
+            // Markup: quotes e.g. < > ... test >
+            "name": "Markup Quotes",
+            "scope": "markup.quote",
+            "foreground": "var(medium_light_yellow)"
+        },
+        {
+            // Markup: links e.g. <https://google.com>
+            "name": "Markup Underline",
+            "scope": "markup.underline.link",
+            "foreground": "var(pale_pink)"
+        },
+        {
+            // Markup: headings e.g. ... <# Installation>
+            "name": "Markup Headings",
+            "scope": "markup.heading",
+            "foreground": "#9DEDE5"
+        },
+        {
+            // Markup: numbered list e.g. < 1. I am number one >
+            "name": "Markup Numbered List",
+            "scope": "markup.list.numbered",
+            "foreground": "var(very_soft_violet)"
+        },
+        {
+            // Markup: unnumbered list e.g. < - I am an unnumbered list >
+            "name": "Markup Unnumbered List",
+            "scope": "markup.list.unnumbered",
+            "foreground": "var(magenta_pink_css_elem_selector)"
+        },
+        {
+            // Markup: technically under constants but only viewed under Markdown
+            // controls codeblock language, e.g. ```<python> ... ```
+            "name": "Markup Codeblock Language Name",
+            "scope": "constant.other.language-name",
+            "foreground": "darkseagreen"
+        },
+        {
+            // Markup: inline links, e.g. <[Hello World]><(> link_here <)>
+            // Markup: inline image, e.g. <![image]><(> image_link_here <)>
+            // Markup: reference style links, e.g. <[link text]>: https://google.com
+            "name": "Inline ",
+            "scope": "meta.link.inline, meta.image.inline, meta.link.reference",
+            "foreground": "var(medium_light_cyan_escape_blue)"
+        },
+        {
+            // Any bracket e.g. [] {} ()
+            // Separators e.g. commas in arrays, arguments to a function, colons in Objects
+            "name": "Punctuation",
+            "scope": "punctuation.section, punctuation.separator",
+            "foreground": "var(very_soft_violet)"
+        }
+    ]
+}
