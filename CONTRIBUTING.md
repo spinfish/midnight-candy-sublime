@@ -1,6 +1,6 @@
 ## Contributing to midnight candy
 First off, thanks for taking the time to contribute to midnight candy!
-The following is a set of guidelines for contributing to this project.
+The following is a set of guidelines for contributing to this project.<br>
 These are mostly guidelines, not hard rules, and you may propose changes to them in a pull request if you wish.
 
 ### I don't want to read all this, I only want to ask a question!!
